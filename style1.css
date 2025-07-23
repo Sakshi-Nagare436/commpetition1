@@ -729,3 +729,91 @@ footer {
   color: #333;
   line-height: 1.7;
 }
+/* ========== ANIMATIONS ========== */
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide-in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========== Applying Animations ========== */
+
+/* Hero fade in */
+.hero .overlay {
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+/* Section content animation */
+.section .content {
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+/* Place cards animation on load */
+.place-card {
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+/* Animate detail overlay */
+.place-detail .overlay {
+  animation: slideInRight 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* ========== Hover/Transition Effects ========== */
+
+/* Animate place card hover */
+.place-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
+}
+
+/* Smooth transition on all animatable elements */
+.hero .overlay,
+.section .content,
+.place-card,
+.place-detail .overlay {
+  transition: all 0.5s ease;
+}
+
+/* Button hover enhancement */
+.btn {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
